@@ -1,0 +1,20 @@
+<div id="definition">
+  <div class="media">
+    <% @defines.each do |define| %>
+    <a class="pull-left" href="#">
+      <%= image_tag define.image_url.to_s %>
+    <!-- not implemented yet
+      <img class="media-object" data-src="holder.js/64x64">
+    -->
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading"><%= define.term %></h4>
+        <%= sanitize(define.definition) %>
+      <p><%= link_to 'Show', "define/#{define.id}" %> |
+        <%= link_to 'Edit', edit_define_path(define) %> |
+        <%= link_to 'Destroy', define, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="span10">
+	<p id="notice"><%= notice %></p>
+
+	<div class="media">
+	  <a class="pull-left" href="#">
+	  	<%= image_tag @define.image_url.to_s %>
+	    <!-- not implemented yet
+	    <img class="media-object" data-src="holder.js/64x64">
+	  	-->
+	  </a>
+	  <div class="media-body">
+	    <h4 class="media-heading"><%= @define.term %></h4>
+	      <%= sanitize(@define.definition) %>
+	    <p>
+	      <%= link_to 'Back', definitions_path %> |
+	      <%= link_to 'New Definition', new_define_path %> |
+	      <%= link_to 'Edit', edit_define_path(@define) %> |
+	      <%= link_to 'Destroy', @define, method: :delete, data: { confirm: 'Are you sure?' } %>
+	    </p>
+	  </div>
+
+	</div>
+</div>
+

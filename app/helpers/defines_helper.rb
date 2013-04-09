@@ -1,0 +1,2 @@
+module DefinesHelper
+end

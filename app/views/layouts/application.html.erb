@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Railsplex: Rails explained by its parts</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar navbar-static-top"> <!-- modified "navbar navbar-fixed-top" -->
+	<div class="navbar-inner">
+		<div class="container">
+			<div class="row">
+				<div class="span10">
+			
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					
+					<a class="brand" href="/"><%= image_tag("logo.png") %>Railsplex</a>
+
+
+					<div class="nav-collapse">
+						<div class="text-center" id="search">
+							<%= form_tag defines_path, class: "form-search", remote: true, method: :get do %>
+							  <div class="input-append">
+							    <%= text_field_tag :query, params[:query], class: "input-medium search-query", id: "appendedInputButtons" %>
+							    <button type="submit" class="btn btn-danger">
+					  				<i class="icon-search icon-white"></i> ingredients
+								</button>
+								<!-- above substitutes this and add the ability to add gyphs on it
+								<%= submit_tag "Find Definition", term: nil, class: "btn btn-danger" %>
+								-->
+							  </div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="span12">
+				<div class="results">
+				</div>
+			</div>
+			<%= yield %>
+		</div>	
+	</div>
+</div>
+
+</body>
+</html>

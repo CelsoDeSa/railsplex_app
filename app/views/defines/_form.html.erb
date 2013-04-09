@@ -1,0 +1,29 @@
+
+<%= form_for @define, html: {multipart: true} do |f| %>
+  <% if @define.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@define.errors.count, "error") %> prohibited this define from being saved:</h2>
+
+      <ul>
+      <% @define.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :term %>
+    <%= f.text_field :term %>
+  </div>
+  <div class="field">
+    <%= f.label :definition %>
+    <%= f.text_area :definition, class: "input-xxlarge" %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit(class: "btn btn-primary") %>
+  </div>
+<% end %>
