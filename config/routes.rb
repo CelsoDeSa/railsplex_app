@@ -2,8 +2,8 @@ Railsplex::Application.routes.draw do
   devise_for :users
 
   resources :defines
-  match 'definitions', to: 'defines#index'
-  match 'define/:id', to: 'defines#show'
+  get 'definitions', to: 'defines#index'
+  get 'define/:id', to: 'defines#show'
   root to: 'welcome#index'
 
   # The priority is based upon order of creation:
