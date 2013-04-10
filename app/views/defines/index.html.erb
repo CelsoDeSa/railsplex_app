@@ -2,8 +2,12 @@
   <div id="definition">
     <div class="media">
       <% @defines.each do |define| %>
-      <a class="pull-left" href="#">
-        <%= image_tag define.image_url.to_s %>
+      <a class="pull-left">
+        <% if define.image? %>
+          <%= image_tag define.image_url.to_s %>
+        <% else %>
+          <%= image_tag("default.png") %>
+        <% end %>
       </a>
       <div class="media-body">
         <h4 class="media-heading"><%= define.term %></h4>
