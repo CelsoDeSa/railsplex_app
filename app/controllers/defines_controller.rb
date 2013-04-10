@@ -1,11 +1,15 @@
 class DefinesController < ApplicationController
   # GET /defines
   # GET /defines.json
+  before_filter :authenticate_user!, except: [:index, :show]
+  
+  load_and_authorize_resource
+  
   def index
     if params[:query]
       @defines = Define.text_search(params[:query])
     else
-      @defines = Define.all
+      @defines = Define.all(order: [:relevance])
     end
 
     respond_to do |format|

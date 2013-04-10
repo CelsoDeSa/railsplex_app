@@ -10,9 +10,8 @@
     <div class="media-body">
       <h4 class="media-heading"><%= define.term %></h4>
         <%= sanitize(define.definition) %>
-      <p><%= link_to 'Show', "define/#{define.id}" %> |
-        <%= link_to 'Edit', edit_define_path(define) %> |
-        <%= link_to 'Destroy', define, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <p>
+        <%= link_to 'Show', "define/#{define.id}", class: "btn btn-success" %>      
       </p>
     </div>
     <% end %>

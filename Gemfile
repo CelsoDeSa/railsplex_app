@@ -40,3 +40,5 @@ gem 'jquery-rails'
 gem 'thin'
 gem "carrierwave"
 gem 'fog'
+gem 'devise'
+gem 'cancan'

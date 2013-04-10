@@ -1,4 +1,6 @@
 Railsplex::Application.routes.draw do
+  devise_for :users
+
   resources :defines
   match 'definitions', to: 'defines#index'
   match 'define/:id', to: 'defines#show'

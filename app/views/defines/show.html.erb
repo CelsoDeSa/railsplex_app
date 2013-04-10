@@ -11,11 +11,20 @@
 	  <div class="media-body">
 	    <h4 class="media-heading"><%= @define.term %></h4>
 	      <%= sanitize(@define.definition) %>
+	      <small class="text-warning">relevance: <%= @define.relevance %></small>
 	    <p>
-	      <%= link_to 'Back', definitions_path %> |
-	      <%= link_to 'New Definition', new_define_path %> |
-	      <%= link_to 'Edit', edit_define_path(@define) %> |
-	      <%= link_to 'Destroy', @define, method: :delete, data: { confirm: 'Are you sure?' } %>
+	      <%= link_to 'Back', definitions_path, class: "btn" %> 
+	      
+	      <% if can? :create, @define %>
+	      	<%= link_to 'New Definition', new_define_path, class: "btn btn-success" %> 
+	      <% end %>
+	      <% if can? :update, @define %>
+	      	<%= link_to 'Edit', edit_define_path(@define), class: "btn" %> 
+	      <% end %>
+	      <% if can? :destroy , @define %>
+	      	<%= link_to 'Destroy', @define, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+	      <% end %>
+
 	    </p>
 	  </div>
 
