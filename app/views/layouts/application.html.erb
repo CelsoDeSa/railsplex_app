@@ -36,9 +36,22 @@
 								-->
 							  </div>
 							<% end %>
-						</div>	
+						</div>
 					</div>
 				</div>
+
+				<% if user_signed_in? %>
+					<div class="span2 pull-right">
+						<div class="btn-group dropdown">
+							<a class="btn btn-danger"><i class="icon-user icon-white"></i>  <%= current_user.email %></a>
+							<a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							 <li><%= link_to glyph(:"warning-sign") + " Logout", destroy_user_session_path, method: :delete %></li>
+							</ul>
+						</div>
+					</div>
+				<% end %>
+
 			</div>
 		</div>
 	</div>
@@ -62,22 +75,6 @@
 		</div>	
 	</div>
 </div>
-
-<% if user_signed_in? %>
-	<div class="navbar" style="margin: 0 auto; height: 100%;">
-		<div class="navbar-inner">
-		
-			<div class="btn-group dropup pull-right">
-				<a class="btn btn-danger"><i class="icon-user icon-white"></i>  <%= current_user.email %></a>
-				<a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-				<ul class="dropdown-menu">
-				 <li><%= link_to glyph(:"warning-sign") + " Logout", destroy_user_session_path, method: :delete %></li>
-				</ul>
-			</div>
-		
-		</div>	
-	</div>
-<% end %>
 
 </body>
 </html>
