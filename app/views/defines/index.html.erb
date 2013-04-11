@@ -13,6 +13,8 @@
 </div>
 
 <div class="span10">
+<ul>
+  <li>
   <div id="definition">
     <div class="media">
       <% @defines.each do |define| %>
@@ -38,6 +40,8 @@
       <% end %>
     </div>
   </div>
+  </li>
+</ul>
   <% if can? :create, @defines %>
     <%= link_to 'New Definition', new_define_path, class: "btn btn-success" %>
   <% end %>
