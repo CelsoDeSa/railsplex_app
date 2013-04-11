@@ -1,3 +1,17 @@
+<div class="container">
+  <div class="navbar text-center">
+    <ul class="inline">
+      <h2 class="text-error">Pick one</h2>
+        <li><%= image_tag("ruby.png") %></li>
+        <li><%= image_tag("rails2.png") %></li>
+        <li><%= image_tag("html5.png") %></li>
+        <li><%= image_tag("css3.png") %></li>
+        <li><%= image_tag("github.png") %></li>
+        <li><%= image_tag("heroku.png") %></li>
+    </ul>
+  </div>
+</div>
+
 <div class="span10">
   <div id="definition">
     <div class="media">
@@ -10,11 +24,9 @@
         <% end %>
       </a>
       <div class="media-body">
-        <h4 class="media-heading"><%= define.term %></h4>
+        <h4 class="media-heading"><%= image_tag("#{define.category}_little.png") %><%= link_to define.term, "define/#{define.id}" %></h4>
           <%= sanitize(define.definition) %>
         <p>
-          <%= link_to 'Show', "define/#{define.id}", class: "btn btn-success" %> 
-
           <% if can? :update, define %>
           <%= link_to 'Edit', edit_define_path(define), class: "btn" %> 
           <% end %>

@@ -9,7 +9,7 @@ $navbarLinkColor: #fff;
 
 @import "bootstrap";
 
-html, body { 
+body { 
 	//padding-top: 150px;
 	//position: relative;
 
@@ -33,9 +33,26 @@ html, body {
 	font-size: 70px;
 }
 
+.navbar ul li img {
+	width: 50px;
+	cursor: pointer;
+
+	&:hover {
+		-webkit-transform: scale(1.5);
+		-moz-transform: scale(1.5);
+		-o-transform: scale(1.5);
+		transform: scale(1.5);
+	}
+}
+
 .media img {
 	width: 120px;
 	height: 100px;
+}
+
+.media-heading img {
+	width: 30px;
+	height: 30px;
 }
 
 footer {
@@ -45,7 +62,6 @@ footer {
 		background-color: #fff;
 	}
 }
-
 
 .navbar-fixed-bottom {
 	background-color: #E32636;

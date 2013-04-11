@@ -8,7 +8,7 @@
         <% end %>
       </a>
 	  <div class="media-body">
-	    <h4 class="media-heading"><%= @define.term %></h4>
+	    <h4 class="media-heading"><%= image_tag("#{@define.category}_little.png") %><%= @define.term %></h4>
 	      <%= sanitize(@define.definition) %>
 	      <small class="text-warning">relevance: <%= @define.relevance %></small>
 	    <p>

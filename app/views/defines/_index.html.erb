@@ -9,11 +9,8 @@
         <% end %>
       </a>
     <div class="media-body">
-      <h4 class="media-heading"><%= define.term %></h4>
+      <h4 class="media-heading"><%= image_tag("#{define.category}_little.png") %><%= link_to define.term, "define/#{define.id}" %></h4>
         <%= sanitize(define.definition) %>
-      <p>
-        <%= link_to 'Show', "define/#{define.id}", class: "btn btn-success" %>      
-      </p>
     </div>
     <% end %>
   </div>

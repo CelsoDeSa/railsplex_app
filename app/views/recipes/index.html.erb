@@ -1,0 +1,24 @@
+<div class="container">
+  <ul class="thumbnails">
+    <% @recipes.each do |recipe| %>
+    <li class="span6">
+      <span class="label label-important pull-right"><h5>Lesson one</h5></span>
+      <div class="thumbnail">
+          
+            <p>
+              <h3 class="text-error text-left"><%= recipe.title %></h3>
+            </p>
+            <p>
+              <%= sanitize(truncate(recipe.recipe, length: 140, separator: ' ')) %>
+              <b><%= link_to "continue >", recipe %></b>
+            </p>
+          
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<% if can? :create, @receipes %>
+  <%= link_to 'New Recipe', new_recipe_path, class: "btn btn-success" %>
+<% end %>

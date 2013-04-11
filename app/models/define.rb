@@ -1,13 +1,13 @@
 class Define < ActiveRecord::Base
-  attr_accessible :definition, :term, :image, :relevance, :user_id
+  attr_accessible :definition, :term, :image, :relevance, :category, :user_id
   mount_uploader :image, ImageUploader
   belongs_to :user
-  validates :definition, :term, :image, :relevance, presence: true
+  validates :definition, :term, :relevance, :category, presence: true
   validates :term, uniqueness: true
 
   	def self.text_search(query)
 	  if query.present?
-	    where("term @@ :q or definition @@ :q", q: query)
+	    where("term @@ :q or category @@ :q or definition @@ :q", q: query)
 	  else
 	    scoped
 	  end
