@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all(order: :id)
 
     respond_to do |format|
       format.html # index.html.erb

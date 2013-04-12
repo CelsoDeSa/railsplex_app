@@ -1,8 +1,8 @@
 <div class="container">
   <ul class="thumbnails">
-    <% @recipes.each do |recipe| %>
+    <% @recipes.each_with_index do |recipe, index| %>
     <li class="span6">
-      <span class="label label-important pull-right"><h5>Lesson one</h5></span>
+      <span class="label label-important pull-right"><h5><%= glyph(:"book", :white) + " #{index}" %></h5></span>
       <div class="thumbnail">
           
             <p>
