@@ -2,9 +2,9 @@
 	<div class="media">
 	  <a class="pull-left">
         <% if @define.image? %>
-          <%= image_tag @define.image_url.to_s %>
+          <%= image_tag @define.image_url.to_s, id:"side" %>
         <% else %>
-          <%= image_tag("default.png") %>
+          <%= image_tag("default.png", id:"side") %>
         <% end %>
       </a>
 	  <div class="media-body">

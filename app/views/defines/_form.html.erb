@@ -13,11 +13,11 @@
   <% end %>
 
   <div class="controls controls-row">
-    <%= f.text_field :term, class: "span9", placeholder: "term" %>
-    <%= f.text_field :relevance, class: "span2", placeholder: "0" %>
+    <%= f.text_field :term, class: "span3", placeholder: "term" %>
+    <%= f.select(:category, options_for_select(['ruby', 'rails', 'html5', 'css3', 'github', 'heroku']), class: "span1") %>
+    <%= f.text_field :relevance, class: "span1", placeholder: "0" %>
   </div>
   <div class="controls">
-    <%= f.select(:category, options_for_select(['ruby', 'rails', 'html5', 'css3', 'github', 'heroku'])) %>
     <%= f.text_area :definition, class: "input-xxlarge", placeholder: "definition here" %>
   </div>
   <div class="field">

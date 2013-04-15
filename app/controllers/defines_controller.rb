@@ -8,6 +8,8 @@ class DefinesController < ApplicationController
   def index
     if params[:query]
       @defines = Define.text_search(params[:query])
+    elsif params[:category]
+      @defines = Define.where(category: params[:category])
     else
       @defines = Define.all(order: [:relevance])
     end

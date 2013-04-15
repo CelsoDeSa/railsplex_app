@@ -16,13 +16,13 @@ body {
 	#search {
 		padding: 30px 0 0 0;
 		.input-medium{
-			width: 230px;
+			
 		}
 	}
 
 	.results {
 		background-color: #fff;
-		padding-top: 50px;
+		padding-top: 30px;
 		}
 	}
 
@@ -45,12 +45,23 @@ body {
 	}
 }
 
+.nav-list {	
+	margin: 0 0 20px 0;
+	background-color: #fff;
+	border: 1px solid #e3e3e3;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;	
+	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+	box-shadow: 0 1px 4px rgba(0,0,0,.065);
+}
+
 .media #side {
-	width: 100px;
-	height: 100px;
+	width: 110px;
+	height: 110px;
 	border-radius: 50%;
-	background:#bd362f;
-	padding: 3px; 
+	background: #FFFFFF;
 }
 
 .media-heading img {

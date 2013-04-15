@@ -3,15 +3,16 @@
     <% @defines.each do |define| %>
       <a class="pull-left">
         <% if define.image? %>
-          <%= image_tag define.image_url.to_s %>
+          <%= image_tag define.image_url.to_s, id:"side" %>
         <% else %>
-          <%= image_tag("default.png") %>
+          <%= image_tag("default.png", id:"side") %>
         <% end %>
       </a>
     <div class="media-body">
-      <h4 class="media-heading"><%= image_tag("#{define.category}_little.png") %><%= link_to define.term, "define/#{define.id}" %></h4>
-        <%= sanitize(define.definition) %>
+      <h4 class="media-heading"><%= link_to image_tag("#{define.category}_little.png"), defines_path(category: define.category) %><%= link_to define.term, "define/#{define.id}" %></h4>
+        <dd><%= sanitize(define.definition) %></dd>
     </div>
+    <p></p>
     <% end %>
   </div>
 </div>

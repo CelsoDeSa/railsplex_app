@@ -2,12 +2,12 @@
   <div class="navbar text-center">
     <ul class="inline">
       <h2 class="text-error">Pick one</h2>
-        <li><%= image_tag("ruby.png") %></li>
-        <li><%= image_tag("rails.png") %></li>
-        <li><%= image_tag("html5.png") %></li>
-        <li><%= image_tag("css3.png") %></li>
-        <li><%= image_tag("github.png") %></li>
-        <li><%= image_tag("heroku.png") %></li>
+        <li><%= link_to image_tag("ruby.png"), defines_path(category: 'ruby') %></li>
+        <li><%= link_to image_tag("rails.png"), defines_path(category: 'rails') %></li>
+        <li><%= link_to image_tag("html5.png"), defines_path(category: 'html5') %></li>
+        <li><%= link_to image_tag("css3.png"), defines_path(category: 'css3') %></li>
+        <li><%= link_to image_tag("github.png"), defines_path(category: 'github') %></li>
+        <li><%= link_to image_tag("heroku.png"), defines_path(category: 'heroku') %></li>
     </ul>
   </div>
 </div>
@@ -15,7 +15,7 @@
 <div class="span10">
 <ul>
   <li>
-  <div id="definition">
+  <div id="definition_index">
     <div class="media">
       <% @defines.each do |define| %>
       <a class="pull-left">
@@ -26,8 +26,8 @@
         <% end %>
       </a>
       <div class="media-body">
-        <h4 class="media-heading"><%= image_tag("#{define.category}_little.png") %><%= link_to define.term, "define/#{define.id}" %></h4>
-          <%= sanitize(define.definition) %>
+        <h4 class="media-heading"><%= link_to image_tag("#{define.category}_little.png"), defines_path(category: define.category) %><%= link_to define.term, "define/#{define.id}" %></h4>
+          <dd><%= sanitize(define.definition) %></dd>
         <p>
           <% if can? :update, define %>
           <%= link_to 'Edit', edit_define_path(define), class: "btn" %> 
@@ -37,6 +37,7 @@
           <% end %>
         </p>
       </div>
+      <p></p>
       <% end %>
     </div>
   </div>

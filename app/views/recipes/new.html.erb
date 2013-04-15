@@ -1,5 +1,11 @@
-<h1>New recipe</h1>
+<div class="span12">
+	<h1>New recipe</h1>
 
-<%= render 'form' %>
+	<div class="span6">
+		<%= render 'form' %>
 
-<%= link_to 'Back', recipes_path %>
+		<div class="form-actions">
+			<%= link_to 'Back', recipes_path, class: "btn" %>
+		</div>
+	</div>
+</div>

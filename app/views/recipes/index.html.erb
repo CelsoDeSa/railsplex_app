@@ -1,6 +1,19 @@
 <div class="container">
-  <ul class="thumbnails">
+  <div class="span3">
+    <ul class="nav nav-list">
+      <li class="nav-header"><h5>Last Recipes</h5></li>
+      <li class="divider"></li>
+      <% @recipes.each do |recipe| %>
+      <li><%= link_to glyph(:book) + " #{recipe.title}", recipe, class: "muted" %></li>
+      <% end %>
+    </ul>
+  </div>
+
+<li class="span1" style="list-style: none;"></li>
+
+  <ul class="span8 thumbnails">
     <% @recipes.each_with_index do |recipe, index| %>
+    
     <li class="span6">
       <span class="label label-important pull-right"><h5><%= glyph(:"book", :white) + " #{index}" %></h5></span>
       <div class="thumbnail">
@@ -9,8 +22,8 @@
               <h3 class="text-error text-left"><%= recipe.title %></h3>
             </p>
             <p>
-              <%= sanitize(truncate(recipe.recipe, length: 140, separator: ' ')) %>
-              <b><%= link_to "continue >", recipe %></b>
+              <dd><%= sanitize(truncate(recipe.recipe, length: 140, separator: ' ')) %>
+              <b><%= link_to "continue >", recipe %></b></dd>
             </p>
           
       </div>
