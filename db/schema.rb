@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130410200922) do
+ActiveRecord::Schema.define(:version => 20130719130926) do
 
   create_table "defines", :force => true do |t|
     t.string   "term"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20130410200922) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "image"
-    t.integer  "relevance"
+    t.string   "relevance"
     t.string   "category"
   end
 
