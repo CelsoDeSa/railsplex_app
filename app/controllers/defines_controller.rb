@@ -9,7 +9,7 @@ class DefinesController < ApplicationController
     if params[:query]
       @defines = Define.text_search(params[:query])
     elsif params[:category]
-      @defines = Define.where(category: params[:category], order: [:relevance])
+      @defines = Define.where(category: params[:category]).order(:relevance)
     else
       @defines = Define.all(order: [:relevance])
     end

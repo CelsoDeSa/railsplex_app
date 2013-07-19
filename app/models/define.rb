@@ -7,7 +7,7 @@ class Define < ActiveRecord::Base
 
   	def self.text_search(query)
 	  if query.present?
-	    where("term @@ :q or category @@ :q or definition @@ :q", q: query)
+	    where("term @@ :q or category @@ :q or definition @@ :q", q: query) #.order(:term)
 	  else
 	    scoped
 	  end
